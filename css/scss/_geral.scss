@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bege-claro;
+  border: 10px solid $bege-medio;
+  color: $cinza;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include d(p) {
+    border: none;
+  }
+}
+
+.titulo {
+  position: relative;
+  @include tipo-1(p);
+  text-transform: uppercase;
+  &::after {
+    content: "";
+    width: 250px;
+    height: 2px;
+    background-color: $cinza;
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    @include d(m) {
+      width: 150px;
+    }
+    @include d(p) {
+      width: 350px;
+    }
+  }
+  @include d(p) {
+    width: 100%;
+  }
+}
+
+[data-scroll] {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: 0.3s;
+}
+
+[data-scroll].ativo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}

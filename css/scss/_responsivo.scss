@@ -1,0 +1,36 @@
+$grande: 1200px;
+$medio: 760px;
+$pequeno: 480px;
+
+@mixin d($tamanho) {
+  @if $tamanho == m {
+    @media (min-width: $medio) and (max-width: #{$grande - 1}) {
+      @content;
+    }
+  } @else if $tamanho == p {
+    @media (max-width: #{$medio - 1}) {
+      @content;
+    }
+  }
+}
+//RESPONSIVIDADE DO CONTAINER PRINCIPAL
+@mixin container {
+  width: 100%;
+  max-width: $grande; //COMEÇA GRANDE
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include d(m) {
+    max-width: $medio; //VAI PRA MEDIO
+  }
+  @include d(p) {
+    max-width: $pequeno; // DEPOIS PRA PEQUENO
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.container {
+  @include container; //DEPOIS INCLUI TUDO NA CLASSE
+}

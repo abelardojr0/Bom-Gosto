@@ -1,0 +1,123 @@
+.contato {
+  margin-top: 60px;
+  @include d(p) {
+    margin-top: 0px;
+  }
+}
+.contato-forms {
+  margin-left: 350px;
+  max-width: 600px;
+
+  label {
+    display: flex;
+    @include tipo-1(p);
+    color: $cinza;
+  }
+
+  input,
+  textarea {
+    box-sizing: border-box;
+    @include tipo-1(p);
+    color: $cinza;
+    width: 100%;
+    width: 600px;
+    height: 40px;
+    padding: 0 5px;
+    background-color: transparent;
+    border: 2px solid $bege-escuro;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    &:hover,
+    &:focus {
+      outline: none;
+      border: 2px solid $bege-medio;
+    }
+    @include d(m) {
+      width: 460px;
+    }
+    @include d(p) {
+      width: 460px;
+    }
+  }
+  textarea {
+    padding-top: 5px;
+    height: 120px;
+  }
+
+  @include d(m) {
+    max-width: 460px;
+    margin-left: 200px;
+  }
+  @include d(p) {
+    margin: 30px auto;
+    max-width: 460px;
+  }
+}
+
+.contato-email-tel {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  input {
+    max-width: 350px;
+    min-width: 250px;
+    width: 100%;
+    @include d(m) {
+      gap: 0px;
+      max-width: 300px;
+      min-width: 150px;
+    }
+    @include d(p) {
+      max-width: 300px;
+      min-width: 100px;
+    }
+  }
+}
+
+.contato-botao {
+  @include tipo-1(p);
+  color: $bege-escuro;
+  min-width: 200px;
+  padding: 20px 0 10px 0;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid $bege-escuro;
+  border-radius: 8px;
+  box-shadow: (5px 5px 0 -2px $bege-medio), (5px 5px 0 0 $bege-escuro);
+
+  &:hover {
+    box-shadow: (3px 3px 0 -2px $bege-medio), (3px 3px 0 0 $bege-escuro);
+  }
+}
+
+.contato-info {
+  display: flex;
+  justify-content: space-between;
+  p {
+    @include tipo-1(p);
+    color: $bege-escuro;
+    text-align: end;
+    line-height: 1.5;
+  }
+  @include d(m) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  @include d(p) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+.contato-mapa {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  img {
+    border: 10px solid $bege-medio;
+    width: 100%;
+    border-radius: 8px;
+  }
+}

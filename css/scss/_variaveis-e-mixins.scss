@@ -1,0 +1,32 @@
+// Cores
+$bege-claro: #ffc8c8;
+$bege-medio: #c48787;
+$bege-escuro: #863d3d;
+$cinza: #2a2426;
+$verde: #1ab912;
+
+// Fontes
+$fonte-1: "PT Mono", monospace;
+$fonte-2: "Aref Ruqaa", serif;
+
+//mixins
+
+@mixin tipo-1($tamanho) {
+  font-family: $fonte-1;
+  @if $tamanho == p {
+    font-size: 18px;
+  } @else if $tamanho == m {
+    font-size: 24px;
+  }
+}
+
+@mixin tipo-2($tamanho) {
+  font-family: $fonte-2;
+  @if $tamanho == p {
+    font-size: 1.125rem;
+    line-height: 1.2;
+  } @else if $tamanho == m {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
